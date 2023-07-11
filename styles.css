@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+}
+
+/* html, body {
+    border: 2px solid grey;
+    height: 100%;
+} */
+
+.blob {
+    background-color: greenyellow;
+    width: 450px;
+    margin:auto;
+    position:relative;
+    top: 100px;
+
+    aspect-ratio: 1;   
+    /* --> the height as well in proportion: width to height */
+    
+
+    /* ELLIPTIC ROUNDING:  */
+    /* 
+    Horizontal amount  /  vertical amount 
+    */
+    /* border-radius: 80% / 100%; */
+
+    border-radius: 62% 55% 48% 40%/ 80% 75% 48% 51%;
+
+    /* 
+    h-t-l h-t-r h-b-r h-b-l   
+    /  
+    v-t-l v-t-r v-b-r v-b-l 
+    
+    */ 
+
+    
+    /* 
+    animation:
+    name duration timing-function delay iteration-count direction fill-mode; */
+    animation-name: blobiness;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blobiness { 
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Get the child DIV and animate it */
+
+.blob div {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: rgba(59, 225, 254, 0.291);
+
+    border: 20px solid rgba(220, 247, 18, 0.342);
+    border-radius: 38% 62% 63% 35%/ 41% 44% 56% 60%;
+
+    animation-name: blobToo;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blobToo { 
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
